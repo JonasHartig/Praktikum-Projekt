@@ -1,22 +1,56 @@
 
 <!DOCTYPE html>
 <html>
+
+
 <head>
 	<meta charset="UTF-8">
-	<title>Titel</title>
-
-
+	<title>The Terminal</title>
+<link href="https://fonts.googleapis.com/css?family=Cinzel:400&amp;subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+
+<div class="grid">
+    <div class="linkbox a">A</div>
+    <div class="linkbox b">B</div>
+</div>
+
 <div id="app">
-  <h1>{{reverseMessage(headline)}}</h1>
+  <h1 class="center">{{(headline)}}</h1>
+  <li v-for="todo in containers[1].todos">
+    {{ todo.name }}
+  </li>
 </div>
 <script src="js/vue.js"> </script>
   <script>
 var app = new Vue({
   el: '#app',
   data: {
-    headline: "Test Überschrift"
+    headline: "The Terminal",
+    containers: [
+      {
+        type: "linkbox",
+        links: [
+          {
+            name: "link1",
+            url: "https://link2",
+            types: ["account", "personal"]
+          }
+        ]
+      },
+      {
+        type: "todo",
+        todos: [
+          {
+            name: "todo1",
+            completed: true
+          },{
+            name: "todo1",
+            completed: true
+          }]
+        }
+    ]
   },
   methods: {
     reverseMessage: function (message) {
