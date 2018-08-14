@@ -11,17 +11,26 @@
 </head>
 <body>
 
-<div class="grid">
-    <div class="linkbox a">A</div>
-    <div class="linkbox b">B</div>
-</div>
 
 <div id="app">
   <h1 class="center">{{(headline)}}</h1>
   <li v-for="todo in containers[1].todos">
     {{ todo.name }}
   </li>
+  <ul class="content">
+  <li  v-for="container in containers" class="content-item">
+   <div v-show="container.type=='linkbox'">Linkbox</div>
+     <div v-show="container.type=='todo'">Todo</div>
+    
+  </li>
+</ul>
 </div>
+
+
+
+
+
+
 <script src="js/vue.js"> </script>
   <script>
 var app = new Vue({

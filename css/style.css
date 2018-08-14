@@ -1,25 +1,34 @@
 .center {
   font-family: 'Cinzel', serif; }
 
-.grid {
-  border: 2px blue solid;
-  height: 500px;
-  width: 500px;
-  grid-template: 200px 200px / 25% 25% 2fr 1fr;
-  grid-gap: 10px 15px; }
+.content {
+  display: flex;
+  border-color: blue;
+  flex-grow: 1;
+  padding: 0;
+  margin: 20px;
+  list-style: none;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: flex-end; }
+  .content .content-item {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center; }
 
 .linkbox {
   background-color: beige;
   color: black;
-  border-radius: 5px;
-  border: 2px dodgerblue solid;
-  grid-column-start: 1;
-  grid-column-end: span 2;
-  grid-row-start: 1;
-  grid-row-end: 3; }
+  border: 2px dodgerblue solid; }
 
 body {
-  background-image: url("../img/green_cup.png");
-  background-color: #cccccc; }
+  background-image: url("../img/green_cup.png"); }
 
 /*# sourceMappingURL=style.css.map */
