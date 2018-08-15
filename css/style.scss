@@ -1,6 +1,3 @@
-body {
-  background: white;
-}
 
 @media (min-width: 768px) {
   body {
@@ -13,6 +10,7 @@ body {
     background: white;
   }
 }
+//---------------------Searchbar------------------------//
 .search {
   //background: url("../img/search.svg")no-repeat right;
   background-size: 40px 40px;
@@ -32,6 +30,7 @@ body {
   .icon{
    position: absolute;
    right: 2px;
+   bottom: 3px;
 
  }
  .text-search{
@@ -45,11 +44,14 @@ body {
 }
 input{
   line-height: 25px;
+//---------------------Überschrift------------------------//
 }
 .center {
   font-family: 'Cinzel', serif;
   text-align: center;
   padding: 10px;
+  font-size: 40px;
+//---------------------Slide-Container--------------------//
 }
 .content{
   display: flex;
@@ -67,8 +69,8 @@ input{
     background: tomato;
     padding: 5px;
     width: 30%;
-    height: 7em;
-    margin: 100px;
+    height: 9em;
+    margin: 50px 10%;
 
     line-height: 150px;
     color: white;
@@ -100,26 +102,21 @@ input{
   }
 }
 
-.linkbox{
-  background-color: beige;
-  color: black;
-  border: 2px dodgerblue solid;
-  &.a{
-
-  }
-
-
-}
+//---------------------Hintergrund--------------------//
 body {
-
   background-image: url("../img/green_cup.png");
+  //background-image: url("../img/Background_01.jpg");
+  //background-color: #213357;
+  //background-image: url("https://www.transparenttextures.com/patterns/light-sketch.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
+//---------------------Slideshow--------------------//
 * {box-sizing:border-box}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1500px;
   position: relative;
   margin: auto;
 }

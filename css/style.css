@@ -1,6 +1,3 @@
-body {
-  background: white; }
-
 @media (min-width: 768px) {
   body {
     background: white; } }
@@ -22,7 +19,8 @@ body {
     background: white; }
   .search .icon {
     position: absolute;
-    right: 2px; }
+    right: 2px;
+    bottom: 3px; }
   .search .text-search {
     width: 420px;
     border: none;
@@ -35,7 +33,8 @@ input {
 .center {
   font-family: 'Cinzel', serif;
   text-align: center;
-  padding: 10px; }
+  padding: 10px;
+  font-size: 40px; }
 
 .content {
   display: flex;
@@ -52,8 +51,8 @@ input {
     background: tomato;
     padding: 5px;
     width: 30%;
-    height: 7em;
-    margin: 100px;
+    height: 9em;
+    margin: 50px 10%;
     line-height: 150px;
     color: white;
     font-weight: bold;
@@ -78,20 +77,16 @@ input {
       height: 50px;
       background-color: white; }
 
-.linkbox {
-  background-color: beige;
-  color: black;
-  border: 2px dodgerblue solid; }
-
 body {
-  background-image: url("../img/green_cup.png"); }
+  background-image: url("../img/green_cup.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
 
 * {
   box-sizing: border-box; }
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 1500px;
   position: relative;
   margin: auto; }
 
