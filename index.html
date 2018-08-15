@@ -6,51 +6,97 @@
 <head>
 	<meta charset="UTF-8">
 	<title>The Terminal</title>
-<link href="https://fonts.googleapis.com/css?family=Cinzel:400&amp;subset=latin-ext" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel:400&amp;subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
 
-<div id="app">
-  <h1 class="center">{{(headline)}}</h1>
-  <li v-for="todo in containers[1].todos">
-    {{ todo.name }}
-  </li>
-  <ul class="content">
-  <li  v-for="container in containers" class="content-item">
-   <div v-show="container.type=='linkbox'">Linkbox</div>
-     <div v-show="container.type=='todo'">Todo</div>
+  <div id="app">
+    <h1 class="center">{{(headline)}}</h1>
     
-  </li>
-</ul>
-</div>
+    <form  class="search" action="https://google.com/search" method="get">
+      <div class="bar" >
+        <input class="text-search" ype="text" name="q"/>
+        <img class="icon" src="img/search.svg">
+      </div> 
+    </form>
+    
+    
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+
+      <!-- Full-width images with number and caption text -->
+      <div class="mySlides fade">
+
+        <ul class="content">
+          <li  v-for="container in containers" class="content-item">
+           <div v-show="container.type=='linkbox'">Links</div> 
+          </li>
+        </ul>
+        <div class="text">Caption Text</div>
+      </div>
+
+      <div class="mySlides fade">
+
+        <ul class="content">
+          <li  v-for="container in containers" class="content-item">
+           <div v-show="container.type=='linkbox'">Todo</div> 
+          </li>
+        </ul>
+        <div class="text">Caption Two</div>
+      </div>
+
+      <div class="mySlides fade">
+
+        <ul class="content">
+          <li  v-for="container in containers" class="content-item">
+           <div v-show="container.type=='linkbox'">Visitenkarte</div> 
+          </li>
+        </ul>
+        <div class="text">Caption Three</div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+  </div>
 
 
 
 
 
 
-<script src="js/vue.js"> </script>
+  <script src="js/vue.js"> </script>
   <script>
-var app = new Vue({
-  el: '#app',
-  data: {
-    headline: "The Terminal",
-    containers: [
-      {
-        type: "linkbox",
-        links: [
+    var app = new Vue({
+      el: '#app',
+      data: {
+        headline: "The Terminal",
+        containers: [
+        {
+          type: "linkbox",
+          links: [
           {
             name: "link1",
             url: "https://link2",
             types: ["account", "personal"]
           }
-        ]
-      },
-      {
-        type: "todo",
-        todos: [
+          ]
+        },
+        {
+          type: "todo",
+          todos: [
           {
             name: "todo1",
             completed: true
@@ -59,15 +105,43 @@ var app = new Vue({
             completed: true
           }]
         }
-    ]
-  },
-  methods: {
-    reverseMessage: function (message) {
-    return message.split('').reverse().join('')
+        ]
+      },
+      methods: {
+        reverseMessage: function (message) {
+          return message.split('').reverse().join('')
+        }
+      }
+
+    })
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block"; 
+      dots[slideIndex-1].className += " active";
     }
-  }
-})
-	
   </script>
 </body>
 </html>
