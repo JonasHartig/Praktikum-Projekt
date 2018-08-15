@@ -1,3 +1,19 @@
+.linkbox{
+  &.linkfont{
+    font-size: 14px;
+  }
+}
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 @media (min-width: 768px) {
   body {
@@ -18,9 +34,9 @@
   
   .bar{
     position: relative;
-    margin: 25px calc(50% - 225px);
+    margin: 25px calc(50% - 250px);
     height: 40px;
-    width: 450px;
+    width: 500px;
     padding: 5px;
     border: 1px solid;
     border-color: grey;
@@ -44,14 +60,14 @@
 }
 input{
   line-height: 25px;
-//---------------------Überschrift------------------------//
+  //---------------------Überschrift------------------------//
 }
 .center {
   font-family: 'Cinzel', serif;
   text-align: center;
   padding: 10px;
   font-size: 40px;
-//---------------------Slide-Container--------------------//
+  //---------------------Slide-Container--------------------//
 }
 .content{
   display: flex;
@@ -68,7 +84,7 @@ input{
     position: relative;
     background: tomato;
     padding: 5px;
-    width: 30%;
+    width: 66%;
     height: 9em;
     margin: 50px 10%;
 
@@ -108,7 +124,7 @@ body {
   //background-image: url("../img/Background_01.jpg");
   //background-color: #213357;
   //background-image: url("https://www.transparenttextures.com/patterns/light-sketch.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 //---------------------Slideshow--------------------//
@@ -123,7 +139,7 @@ body {
 
 /* Hide the images by default */
 .mySlides {
-    display: none;
+  display: none;
 }
 
 /* Next & previous buttons */

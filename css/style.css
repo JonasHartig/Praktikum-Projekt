@@ -1,3 +1,16 @@
+.linkbox.linkfont {
+  font-size: 14px; }
+
+.column {
+  float: left;
+  width: 50%; }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 @media (min-width: 768px) {
   body {
     background: white; } }
@@ -9,9 +22,9 @@
   width: 100%; }
   .search .bar {
     position: relative;
-    margin: 25px calc(50% - 225px);
+    margin: 25px calc(50% - 250px);
     height: 40px;
-    width: 450px;
+    width: 500px;
     padding: 5px;
     border: 1px solid;
     border-color: grey;
@@ -50,7 +63,7 @@ input {
     position: relative;
     background: tomato;
     padding: 5px;
-    width: 30%;
+    width: 66%;
     height: 9em;
     margin: 50px 10%;
     line-height: 150px;
