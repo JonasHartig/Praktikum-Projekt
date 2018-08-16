@@ -15,20 +15,22 @@
 
   <div id="app">
     <h1 class="center">{{(headline)}}</h1>
-    
+
     <form  class="search" action="https://google.com/search" method="get">
       <div class="bar" >
         <input class="text-search" ype="text" name="q"/>
         <img class="icon" src="img/search.svg">
-      </div> 
+      </div>
     </form>
     <ul class="content">
       <li  v-for="(container, index) in containers" v-if="index == slideIndex"  class="content-item">
-       <div v-show="container.type=='todo'">todo</div> 
-       <div v-show="container.type=='linkbox'">Links</div> 
-       <div v-show="container.type=='vcard'">vcard</div> 
+       <div v-show="container.type=='todo'">todo</div>
+       <div v-show="container.type=='linkbox'">Links
+       <a class="linkboxlinks"v-for="link in container.links"v-bind:href="link.url" >{{link.name}}</a>
+		 </div>
+       <div v-show="container.type=='vcard'">vcard</div>
      </li>
-   </ul> 
+   </ul>
 
    <!-- Next and previous buttons -->
    <a class="prev" v-on:click="slideIndex == 0 ? slideIndex =containers.length -1: slideIndex--">&#10094;</a>
@@ -37,7 +39,7 @@
 
    <!-- The dots/circles -->
    <div style="text-align:center">
-    <span class="dot" v-for="(container, index) in containers" v-on:click="slideIndex = index" v-bind:class="{ active: slideIndex == index}"></span> 
+    <span class="dot" v-for="(container, index) in containers" v-on:click="slideIndex = index" v-bind:class="{ active: slideIndex == index}"></span>
   </div>
 
 
@@ -47,83 +49,6 @@
 
 
   <script src="js/vue.js"> </script>
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        slideIndex : 1,
-        headline: "The Terminal",
-        containers: [
-        {
-          type: "todo",
-          todos: [
-          {
-            name: "todo1",
-            completed: true
-          },{
-            name: "todo1",
-            completed: true
-          }]
-        },
-        {
-          type: "linkbox",
-          links: [
-          {
-            name: "link1",
-            url: "https://wikipedia.org",
-            types: ["account", "personal"]
-          }
-          ]
-        },
-        {
-          type: "vcard",
-          todos: [
-          {
-            name: "todo1",
-            completed: true
-          },{
-            name: "todo1",
-            completed: true
-          }]
-        }
-
-        ]
-      },
-      methods: {
-        reverseMessage: function (message) {
-          return message.split('').reverse().join('')
-        }
-      }
-
-    })
-    
-
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-    if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block"; 
-      dots[slideIndex-1].className += " active";
-    }
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
