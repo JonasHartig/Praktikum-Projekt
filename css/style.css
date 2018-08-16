@@ -51,7 +51,7 @@ input {
     background: tomato;
     padding: 5px;
     width: 66%;
-    height: 9em;
+    height: 400px;
     margin: 50px 10%;
     line-height: 150px;
     color: white;
@@ -78,14 +78,26 @@ input {
       background-color: white; }
 
 .linkboxlinks {
-  display: grid;
+  display: flex;
   justify-content: right;
-  columns: 2;
-  font-size: 14px;
+  font-size: 15px;
   border: 1px solid gray;
-  margin: 2px;
   line-height: 25px;
-  width: 100px; }
+  width: 100px;
+  height: 50px;
+  align-content: center;
+  text-align: justify; }
+
+.linkcontainer {
+  border: 1px solid black;
+  column-count: 2;
+  height: 400px; }
+
+.link-icons {
+  margin: 0;
+  padding: 0;
+  width: 70px;
+  height: 50px; }
 
 body {
   background-image: url("../img/diagmonds.png"); }
@@ -104,7 +116,8 @@ body {
   display: none; }
 
 /* Next & previous buttons */
-.prev, .next {
+.next,
+.prev {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -123,7 +136,8 @@ body {
   border-radius: 3px 0 0 3px; }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+.next:hover,
+.prev:hover {
   background-color: rgba(0, 0, 0, 0.8); }
 
 /* Caption text */
@@ -155,7 +169,8 @@ body {
   display: inline-block;
   transition: background-color 0.6s ease; }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171; }
 
 /* Fading animation */
@@ -167,12 +182,12 @@ body {
 
 @-webkit-keyframes fade {
   from {
-    opacity: .4; }
+    opacity: 0.4; }
   to {
     opacity: 1; } }
 @keyframes fade {
   from {
-    opacity: .4; }
+    opacity: 0.4; }
   to {
     opacity: 1; } }
 
