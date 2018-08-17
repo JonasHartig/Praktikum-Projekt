@@ -50,6 +50,24 @@ var app = new Vue({
             url: "https://www.deepl.com/translator",
             types: ["account", "personal"],
             icon:"img/tab-icon.svg"
+          },
+          {
+            name: "twitter",
+            url: "https://twitter.com/",
+            types: ["account", "personal"],
+            icon:"img/twitter-square-brands.svg"
+          },
+          {
+            name: "whatsapp Web",
+            url: "https://web.whatsapp.com/",
+            types: ["account", "personal"],
+            icon:"img/whatsapp-square-brands.svg"
+          },
+          {
+            name: "dropbox",
+            url: "https://www.dropbox.com/",
+            types: ["account", "personal"],
+            icon:"img/dropbox-brands.svg"
           }
         ]
       },

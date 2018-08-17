@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<title>The Terminal</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Cinzel:400&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Overpass+Mono:400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="img/connectdevelop-brands.ico">
 </head>
@@ -25,7 +25,7 @@
 		<ul class="content">
 			<li v-for="(container, index) in containers" v-if="index == slideIndex" class="content-item">
 				<div v-show="container.type=='todo'">todo</div>
-				<div v-show="container.type=='linkbox'">Link
+				<div v-show="container.type=='linkbox'">Linksektion
 					<div class="linkcontainer">
 						<a class="linkboxlinks a-tag" v-for="link in container.links" v-bind:href="link.url">
 							<img class="link-icons" v-bind:src="link.icon" alt="">
