@@ -3,6 +3,7 @@ var app = new Vue({
   data: {
     slideIndex: 1,
     headline: "The Terminal",
+    data: {},
     containers: [{
         type: "todo",
         todos: [{
@@ -70,6 +71,7 @@ var app = new Vue({
             icon:"img/dropbox-brands.svg"
           }
         ]
+
       },
       {
         type: "vcard",
@@ -84,42 +86,85 @@ var app = new Vue({
 
     ]
   },
+  created: function(){
+    var param = {
+      name: "whatsapp Web",
+      url: "https://web.whatsapp.com/",
+      types: ["account", "personal"],
+      icon: ""
+    };
+    var vm = this;
+         return $.ajax({
+         url: 'https://the-terminal.firebaseio.com//.json',
+         type: "get",
+         data: JSON.stringify(param),
+         success: function (e) {
+            console.log("success", e, e["-LK74cOfNE_4BKqRF1O-"]);
+            // var data = JSON.parse();
+            $.each(e, function(key, val) {
+              vm.containers[1].links.push(val);
+            })
+         },
+         error: function(error) {
+           alert("error: "+error);
+         }
+       });
+
+
+
+    // console.log(data["-LK74cOfNE_4BKqRF1O"]);
+    // $.each(data, function(key, value){
+    //   console.log("elemt 1");
+    //   console.log(value);
+    // });
+
+
+
+  },
   methods: {
     reverseMessage: function(message) {
       return message.split('').reverse().join('')
-    }
+    },
+  requestData: function(){
+    var param = {
+      name: "whatsapp Web",
+      url: "https://web.whatsapp.com/",
+      types: ["account", "personal"],
+      icon: ""
+    };
+         return $.ajax({
+         url: 'https://the-terminal.firebaseio.com//.json',
+         type: "get",
+         data: JSON.stringify(param),
+         success: function (e) {
+            console.log("success", e, e["-LK74cOfNE_4BKqRF1O-"]);
+            // var data = JSON.parse();
+            this.data = e;
+         },
+         error: function(error) {
+           alert("error: "+error);
+         }
+       });
+  },
+sendData: function(){
+    var param = {
+      name: "whatsapp Web",
+      url: "https://web.whatsapp.com/",
+      types: ["account", "personal"],
+      icon: ""
+    };
+         $.ajax({
+         url: 'https://the-terminal.firebaseio.com//.json',
+         type: "post",
+         data: JSON.stringify(param),
+         success: function (e) {
+            console.log(e);
+         },
+         error: function(error) {
+           alert("error: "+error);
+         }
+       });
+  }
   }
 
 })
-
-
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1
-  }
-  if (n < 1) {
-    slideIndex = slides.length
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
