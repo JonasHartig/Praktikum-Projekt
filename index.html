@@ -24,7 +24,7 @@
 		</form>
 		<ul class="content">
 			<li v-for="(container, index) in containers" v-if="index == slideIndex" class="content-item">
-				<div v-show="container.type=='todo'">todo</div>
+				<div v-show="container.type=='todo'">todo BETA</div>
 				<div v-show="container.type=='linkbox'">Linksektion
 					<div class="linkcontainer">
 						<a class="linkboxlinks a-tag" v-for="link in container.links" v-bind:href="link.url">
@@ -33,7 +33,7 @@
 							</a>
 					</div>
 				</div>
-				<div v-show="container.type=='vcard'">vcard</div>
+				<div v-show="container.type=='vcard'">vcard BETA</div>
 			</li>
 		</ul>
 
