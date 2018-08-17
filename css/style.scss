@@ -33,6 +33,7 @@ $containerheight: 400px; //---------------------Searchbar-----------------------
     border-color: grey;
     line-height: 35px;
     background: white;
+
   }
 
   .icon {
@@ -46,6 +47,8 @@ $containerheight: 400px; //---------------------Searchbar-----------------------
     border: none;
     outline: none;
     font-size: 20px;
+    font-family: 'Overpass Mono';
+    }
   }
 }
 
@@ -59,7 +62,6 @@ input {
   text-align: center;
   padding: 10px;
   font-size: 3em;
-
   //---------------------Slide-Container--------------------//
 }
 
@@ -91,8 +93,6 @@ input {
     font-size: 40px;
     text-align: center;
     background: rgba(255, 255, 255, 0.15);
-
-
     // &::before {
     //   content: '';
     //   position: absolute;
@@ -157,7 +157,7 @@ input {
   z-index: 3;
   position: absolute;
   left: 10px;
-  top: 0px;
+  top: 0;
 }
 
 body {
