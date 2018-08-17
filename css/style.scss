@@ -1,16 +1,21 @@
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
   body {
     background: white;
+    .linkcontainer{
+      column-count: 3;
+    }
+
   }
 }
 @media (min-width: 1024px) {
-
   body {
     background: white;
   }
+  .linkcontainer{
+    column-count: 2;
+  }
 }
-$containerheight: 400px;
-//---------------------Searchbar------------------------//
+$containerheight: 400px; //---------------------Searchbar------------------------//
 
 .search {
   //background: url("../img/search.svg")no-repeat right;
@@ -69,38 +74,43 @@ input {
 
   .content-item {
     position: relative;
-    background: tomato;
+    // background: tomato;
+    // border: 2px solid gray;
+    box-shadow: inset 0px 5px 22px 3px #595d7d45;
+    border-radius:40px;
     padding: 5px;
     width: 66%;
     height: $containerheight;
     margin: 50px 10%;
-    line-height: 150px;
+    line-height: 100px;
     color: white;
     font-weight: bold;
     font-size: 3em;
     text-align: center;
+    background: rgba(255, 255, 255, 0.15);
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      z-index: -1;
-      width: 50px;
-      height: 50px;
-      background-color: white;
-    }
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      right: -10px;
-      z-index: -1;
-      width: 50px;
-      height: 50px;
-      background-color: white;
-    }
+    // filter: blur(4px);
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: -10px;
+    //   left: -10px;
+    //   z-index: -1;
+    //   width: 50px;
+    //   height: 50px;
+    //   background-color: white;
+    // }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: -10px;
+    //   right: -10px;
+    //   z-index: -1;
+    //   width: 50px;
+    //   height: 50px;
+    //   background-color: white;
+    // }
   }
 }
 //---------------------Slide-Container-Inhalt---------//
@@ -109,33 +119,47 @@ input {
   display: flex;
   justify-content: right;
   font-size: 15px;
-  border: 1px solid gray;
+  // border: 1px solid;
   // margin: 2px;
   line-height: 25px;
-  width: 100px;
+  width: 150px;
   height: 50px;
+  margin: 5px 0px;
   align-content: center;
   text-align: justify;
+  z-index: 3;
+  flex-wrap: wrap;
 }
-.linkcontainer{
+.a-tag{
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 360px;
+
+
+    }
+.linkcontainer {
   // display: grid;
-  border: 1px solid black;
+  // border: 1px solid black;
   column-count: 2;
   height: $containerheight;
 }
-.link-icons{
+
+.link-icons {
   margin: 0;
   padding: 0;
   width: 70px;
   height: 50px;
+  z-index: 3;
 }
+
 body {
   //background-image: url("../img/green_cup.png");
   //background-image: url("../img/Background_01.jpg");
   //background-color: #213357;
   background-image: url("../img/diagmonds.png");
+
 }
 //---------------------Slideshow--------------------//
+
 * {
   box-sizing: border-box;
 }

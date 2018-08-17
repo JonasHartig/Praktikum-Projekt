@@ -27,7 +27,7 @@
 				<div v-show="container.type=='todo'">todo</div>
 				<div v-show="container.type=='linkbox'">Link
 					<div class="linkcontainer">
-						<a class="linkboxlinks" v-for="link in container.links" v-bind:href="link.url">
+						<a class="linkboxlinks a-tag" v-for="link in container.links" v-bind:href="link.url">
 							<img class="link-icons" v-bind:src="link.icon" alt="">
 							{{link.name}}
 							</a>
